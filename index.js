@@ -73,7 +73,7 @@ Person.prototype.toString = function (){
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
 
-function Car() {
+function Car(model, milesPerGallon) {
   
 }
 
@@ -85,10 +85,22 @@ function Car() {
     - Besides the methods on Person.prototype, babies have the ability to `.play()`:
         + Should return a string "Playing with x", x being the favorite toy.
 */
-function Baby() {
- 
+function Baby(name, age, favoriteToy) {
+ this.name = name;
+ this.age = age;
+ this.favoriteToy = favoriteToy;
+};
+Baby.prototype.play = function(){
+  return `Playing with ${this.favoriteToy}.`;
 }
-
+Baby.prototype.eat = function(edible){
+  if(this.stomach.length < 10){
+    this.stomach.push(edible);
+    }
+  }
+Baby.prototype.poop = function(){
+  this.stomach = [];
+}
 
 /* 
   TASK 4
