@@ -122,10 +122,10 @@ Baby.prototype.poop = function(){
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. using this in global scope will end up being window.
+  2. whatever object is before the '.' is this.
+  3. for new binding is creating and returning a specific thing.
+  4. using in explicit defines what this is.
 */
 
 
