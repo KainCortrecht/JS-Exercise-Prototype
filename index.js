@@ -7,6 +7,8 @@
         + If a plane lands, its `isFlying` property is set to false.
 */
 
+const { is } = require("@babel/types");
+
 // EXAMPLE SOLUTION CODE:
 function Airplane(name) {
   this.name = name;
@@ -74,10 +76,25 @@ Person.prototype.toString = function (){
 */
 
 function Car(model, milesPerGallon) {
-  
+  this.model = model;
+  this.milesPerGallon = milesPerGallon;
+  this.tank = 0;
+  this.odometer = 0;
 }
-
-
+Car.prototype.fill = function(gallons){
+  this.tank = this.tank + gallons;
+}
+Car.prototype.drive = function(distance){
+  const driveMiles = this.tank * history.milesPerGallon;
+  if(distance <= driveMiles){
+    this.odometer = this.odometer + distance;
+    this.tank = this.tank - (distance / this.milesPerGallon);
+  }else{
+    this.odometer = this.odometer + driveMiles;
+    this.tank = 0;
+    return `I ran out of fuel at ${this.odometer} miles!`;
+  }
+}
 /*
   TASK 3
     - Write a Baby constructor subclassing Person.
